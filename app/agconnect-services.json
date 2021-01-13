@@ -1,0 +1,14 @@
+{
+	"client":{
+		"appType":"1",
+		"cp_id":"1340007000009795659",
+		"product_id":"736430079244780424",
+		"client_id":"539316913927357632",
+		"client_secret":"C366FE87A3A1E16667284D12EBDBD9DA862B8BE78C6BFBC62B276A398984EF74",
+		"project_id":"736430079244780424",
+		"app_id":"103676441",
+		"api_key":"CgB6e3x9+RT1tdvw0uAXXbHK/ASc21OdRV56waN5MTKMZMRsg5//eq+9TALh+FIlBrLVeX3N0H+4Ru0Sl8CFXRd3",
+		"package_name":"com.erdemtsynduev.whooshqr"
+	},
+	"configuration_version":"1.0"
+}
