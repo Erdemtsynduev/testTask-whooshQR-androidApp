@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WhooshQR</string>
+    <string name="scan_tip">Поместите QR код в рамку</string>
 </resources>
