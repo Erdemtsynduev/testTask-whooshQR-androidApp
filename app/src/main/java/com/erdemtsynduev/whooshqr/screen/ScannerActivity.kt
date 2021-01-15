@@ -32,15 +32,9 @@ class ScannerActivity : AppCompatActivity() {
         val dm = resources.displayMetrics
         val density = dm.density
         //2. Obtain the screen size.
-        //2. Obtain the screen size.
         screenWidth = resources.displayMetrics.widthPixels
         screenHeight = resources.displayMetrics.heightPixels
-
         val scanFrameSize = (scanFrameSize * density).toInt()
-
-        //3. Calculate the viewfinder's rectangle, which in the middle of the layout.
-        //Set the scanning area. (Optional. Rect can be null. If no settings are specified, it will be located in the middle of the layout.)
-
         //3. Calculate the viewfinder's rectangle, which in the middle of the layout.
         //Set the scanning area. (Optional. Rect can be null. If no settings are specified, it will be located in the middle of the layout.)
         val rect = Rect()
@@ -52,13 +46,13 @@ class ScannerActivity : AppCompatActivity() {
         //Initialize the RemoteView instance, and set callback for the scanning result.
         remoteView = RemoteView.Builder().setContext(this).setBoundingBox(rect).setFormat(HmsScan.ALL_SCAN_TYPE).build()
         // Subscribe to the scanning result callback event.
-        // Subscribe to the scanning result callback event.
+
         remoteView?.setOnResultCallback { result -> //Check the result.
             if (result != null && result.isNotEmpty() && result[0] != null && !TextUtils.isEmpty(result[0].getOriginalValue())) {
                 //TODO ADD GET QR
             }
         }
-        // Load the customized view to the activity.
+
         // Load the customized view to the activity.
         remoteView?.onCreate(savedInstanceState)
         val params = FrameLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
