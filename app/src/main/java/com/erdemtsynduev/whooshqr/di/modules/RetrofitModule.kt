@@ -76,7 +76,7 @@ class RetrofitModule {
             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
             .setFieldNamingStrategy(CustomFieldNamingPolicy())
             .setPrettyPrinting()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ")
+            .setDateFormat(ConstApp.DATE_FORMAT_GSON)
             .serializeNulls()
             .create()
     }
