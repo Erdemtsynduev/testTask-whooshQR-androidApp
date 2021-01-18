@@ -51,6 +51,8 @@ class ResultPresenter(var qrDataBike: String?) : BasePresenter<ResultView>() {
                 viewState.showError(errorModel.message)
                 return
             }
+        } else {
+            viewState.showError("An unknown error has occurred")
         }
     }
 }
