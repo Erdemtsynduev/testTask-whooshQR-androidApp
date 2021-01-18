@@ -15,7 +15,7 @@ constructor() : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val original = chain.request()
         val authorized = original.newBuilder()
-            .addHeader("'x-api-key", ConstApp.HEADER_AUTH)
+            .addHeader("x-api-key", ConstApp.HEADER_AUTH)
             .build()
         return chain.proceed(authorized)
     }
