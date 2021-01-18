@@ -1,5 +1,6 @@
 package com.erdemtsynduev.whooshqr.screen.result
 
+import com.erdemtsynduev.whooshqr.ExtendApplication
 import com.erdemtsynduev.whooshqr.network.NetworkService
 import com.erdemtsynduev.whooshqr.network.model.response.ErrorResponse
 import com.erdemtsynduev.whooshqr.screen.BasePresenter
@@ -15,6 +16,10 @@ class ResultPresenter(var qrDataBike: String?) : BasePresenter<ResultView>() {
 
     @Inject
     lateinit var networkService: NetworkService
+
+    init {
+        ExtendApplication.instance.getAppComponent()?.inject(this)
+    }
 
     override fun onFirstViewAttach() {
         getBikeData(qrDataBike)
