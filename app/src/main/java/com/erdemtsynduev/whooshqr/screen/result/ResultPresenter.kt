@@ -26,14 +26,17 @@ class ResultPresenter(var qrDataBike: String?) : BasePresenter<ResultView>() {
     }
 
     private fun getBikeData(qrData: String?) {
+        viewState.startProgressBar()
         val subscription = networkService.getStatusWooshBikeObservable(
             qrData!!
         )
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-               viewState.showDataResponse(it.status, it.comments)
+                viewState.stopProgressBar()
+                viewState.showDataResponse(it.status, it.comments)
             }, { exception ->
+                viewState.stopProgressBar()
                 checkError(exception)
             })
         unsubscribeOnDestroy(subscription)
