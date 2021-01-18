@@ -1,6 +1,7 @@
 package com.erdemtsynduev.whooshqr.screen.result
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.erdemtsynduev.whooshqr.R
 import kotlinx.android.synthetic.main.activity_result.*
@@ -31,6 +32,18 @@ class ResultActivity : MvpAppCompatActivity(), ResultView {
 
     override fun showError(errorText: String?) {
         Toast.makeText(this, "Error request = $errorText", Toast.LENGTH_LONG).show()
+    }
+
+    override fun startProgressBar() {
+        toggleProgressVisibility(true)
+    }
+
+    override fun stopProgressBar() {
+        toggleProgressVisibility(false)
+    }
+
+    private fun toggleProgressVisibility(show: Boolean) {
+        activity_result_progress_bar.visibility = if (show) View.VISIBLE else View.GONE
     }
 
     companion object {

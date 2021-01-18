@@ -6,6 +6,7 @@ import com.erdemtsynduev.whooshqr.di.modules.ContextModule
 import com.erdemtsynduev.whooshqr.di.modules.NetworkModule
 import com.erdemtsynduev.whooshqr.di.modules.RetrofitModule
 import com.erdemtsynduev.whooshqr.network.NetworkService
+import com.erdemtsynduev.whooshqr.screen.result.ResultPresenter
 import dagger.Component
 import javax.inject.Singleton
 
@@ -14,4 +15,5 @@ import javax.inject.Singleton
 interface AppComponent {
     val context: Context
     val networkService: NetworkService
+    fun inject(resultPresenter: ResultPresenter)
 }

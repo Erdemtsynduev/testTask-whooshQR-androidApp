@@ -1,6 +1,6 @@
 package com.erdemtsynduev.whooshqr.screen.result
 
-import com.erdemtsynduev.whooshqr.ExtendApplication
+import com.erdemtsynduev.whooshqr.network.NetworkService
 import com.erdemtsynduev.whooshqr.network.model.response.ErrorResponse
 import com.erdemtsynduev.whooshqr.screen.BasePresenter
 import com.google.gson.Gson
@@ -8,11 +8,13 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import moxy.InjectViewState
 import retrofit2.HttpException
+import javax.inject.Inject
 
 @InjectViewState
 class ResultPresenter(var qrDataBike: String?) : BasePresenter<ResultView>() {
 
-    private var networkService = ExtendApplication.instance.getAppComponent()!!.networkService
+    @Inject
+    lateinit var networkService: NetworkService
 
     override fun onFirstViewAttach() {
         getBikeData(qrDataBike)
